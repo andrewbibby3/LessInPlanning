@@ -1,0 +1,31 @@
+<% include ../partials/header %> 
+
+<div class="container">
+    <header class="jumbotron">
+        <div>
+            <h1>Welcome to Lessin Planning</h1>
+            <p>We want to make creating, managing, and adjusting Lesson Plans Easier</p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/plans/new">Add a New Lesson Plan</a>
+            </p>
+        </div>
+    </header>
+    
+    <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+        <% plans.forEach(function(plan){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <h4>LessonPlan</h4>
+                    <div class="caption">
+                        <h4><%= plan.title %></h4>
+                    </div>
+                    <p>
+                        <a href="/plans/<%= plan._id %>" class="btn btn-primary">View Plan</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>
